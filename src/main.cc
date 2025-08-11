@@ -50,17 +50,18 @@ int main() {
 
     // Search loop
     std::string query;
-    std::cout << "\nEnter search term: ";
+    std::cout << "\nEnter search terms: ";
     while (std::getline(std::cin, query)) {
         auto results = indexer.search(query);
         if (results.empty()) {
             std::cout << "No results found.\n";
         } else {
             std::cout << "Results:\n";
-            for (const auto& u : results) {
-                std::cout << " - " << u << "\n";
+            for (auto& [url, score] : results) {
+                std::cout << " - " << url << " (score: " << score << ")\n";
             }
         }
-        std::cout << "\nEnter search term: ";
+        std::cout << "\nEnter search terms: ";
     }
+
 }

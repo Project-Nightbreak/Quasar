@@ -1,236 +1,168 @@
 {
-  "0": [
-    "https://example.com",
-    "https://example.com",
-    "https://example.com"
-  ],
-  "05em": [
-    "https://example.com"
-  ],
-  "2em": [
-    "https://example.com"
-  ],
-  "2px": [
-    "https://example.com",
-    "https://example.com"
-  ],
-  "38488f": [
-    "https://example.com"
-  ],
-  "3px": [
-    "https://example.com"
-  ],
-  "403": [
-    "https://www.iana.org/domains/example"
-  ],
-  "5em": [
-    "https://example.com"
-  ],
-  "600px": [
-    "https://example.com"
-  ],
-  "700px": [
-    "https://example.com"
-  ],
-  "7px": [
-    "https://example.com"
-  ],
-  "alink": [
-    "https://example.com"
-  ],
-  "applesystem": [
-    "https://example.com"
-  ],
-  "arial": [
-    "https://example.com"
-  ],
-  "asking": [
-    "https://example.com"
-  ],
-  "auto": [
-    "https://example.com",
-    "https://example.com",
-    "https://example.com"
-  ],
-  "avisited": [
-    "https://example.com"
-  ],
-  "backgroundcolor": [
-    "https://example.com",
-    "https://example.com"
-  ],
-  "blinkmacsystemfont": [
-    "https://example.com"
-  ],
-  "body": [
-    "https://example.com"
-  ],
-  "borderradius": [
-    "https://example.com"
-  ],
-  "boxshadow": [
-    "https://example.com"
-  ],
-  "color": [
-    "https://example.com"
-  ],
-  "contact": [
-    "https://www.iana.org/domains/example"
-  ],
-  "coordination": [
-    "https://example.com"
-  ],
-  "div": [
-    "https://example.com",
-    "https://example.com"
-  ],
-  "documents": [
-    "https://example.com"
-  ],
-  "domain": [
-    "https://example.com",
-    "https://example.com",
-    "https://example.com",
-    "https://example.com"
-  ],
-  "example": [
-    "https://example.com",
-    "https://example.com"
-  ],
-  "examples": [
-    "https://example.com"
-  ],
-  "f0f0f2": [
-    "https://example.com"
-  ],
-  "fdfdff": [
-    "https://example.com"
-  ],
-  "fontfamily": [
-    "https://example.com"
-  ],
-  "for": [
-    "https://example.com",
-    "https://example.com"
-  ],
-  "forbidden": [
-    "https://www.iana.org/domains/example"
-  ],
-  "helvetica": [
-    "https://example.com",
-    "https://example.com"
-  ],
-  "ianaianaorg": [
-    "https://www.iana.org/domains/example"
-  ],
-  "illustrative": [
-    "https://example.com"
-  ],
-  "in": [
-    "https://example.com",
-    "https://example.com",
-    "https://example.com"
-  ],
-  "information": [
-    "https://example.com"
-  ],
-  "is": [
-    "https://example.com"
-  ],
-  "literature": [
-    "https://example.com"
-  ],
-  "margin": [
-    "https://example.com",
-    "https://example.com",
-    "https://example.com"
-  ],
-  "maxwidth": [
-    "https://example.com"
-  ],
-  "may": [
-    "https://example.com"
-  ],
-  "media": [
-    "https://example.com"
-  ],
-  "more": [
-    "https://example.com"
-  ],
-  "neue": [
-    "https://example.com"
-  ],
-  "none": [
-    "https://example.com"
-  ],
-  "open": [
-    "https://example.com"
-  ],
-  "or": [
-    "https://example.com"
-  ],
-  "padding": [
-    "https://example.com",
-    "https://example.com"
-  ],
-  "permission": [
-    "https://example.com"
-  ],
-  "prior": [
-    "https://example.com"
-  ],
-  "questions": [
-    "https://www.iana.org/domains/example"
-  ],
-  "required": [
-    "https://www.iana.org/domains/example"
-  ],
-  "rgba000002": [
-    "https://example.com"
-  ],
-  "sans": [
-    "https://example.com"
-  ],
-  "sansserif": [
-    "https://example.com"
-  ],
-  "segoe": [
-    "https://example.com"
-  ],
-  "status": [
-    "https://www.iana.org/domains/example"
-  ],
-  "systemui": [
-    "https://example.com"
-  ],
-  "textdecoration": [
-    "https://example.com"
-  ],
-  "this": [
-    "https://example.com",
-    "https://example.com"
-  ],
-  "ui": [
-    "https://example.com"
-  ],
-  "use": [
-    "https://example.com",
-    "https://example.com"
-  ],
-  "useragent": [
-    "https://www.iana.org/domains/example"
-  ],
-  "width": [
-    "https://example.com",
-    "https://example.com"
-  ],
-  "with": [
-    "https://www.iana.org/domains/example"
-  ],
-  "without": [
-    "https://example.com"
-  ],
-  "you": [
-    "https://example.com"
-  ]
+  "doc_lengths": {
+    "https://example.com": 54,
+    "https://www.iana.org/domains/example": 8
+  },
+  "index": {
+    "0": {
+      "https://example.com": 3
+    },
+    "05em": {
+      "https://example.com": 1
+    },
+    "2em": {
+      "https://example.com": 1
+    },
+    "2px": {
+      "https://example.com": 2
+    },
+    "38488f": {
+      "https://example.com": 1
+    },
+    "3px": {
+      "https://example.com": 1
+    },
+    "403": {
+      "https://www.iana.org/domains/example": 1
+    },
+    "5em": {
+      "https://example.com": 1
+    },
+    "600px": {
+      "https://example.com": 1
+    },
+    "700px": {
+      "https://example.com": 1
+    },
+    "7px": {
+      "https://example.com": 1
+    },
+    "applesystem": {
+      "https://example.com": 1
+    },
+    "arial": {
+      "https://example.com": 1
+    },
+    "asking": {
+      "https://example.com": 1
+    },
+    "avisited": {
+      "https://example.com": 1
+    },
+    "blinkmacsystemfont": {
+      "https://example.com": 1
+    },
+    "borderradius": {
+      "https://example.com": 1
+    },
+    "boxshadow": {
+      "https://example.com": 1
+    },
+    "contact": {
+      "https://www.iana.org/domains/example": 1
+    },
+    "coordination": {
+      "https://example.com": 1
+    },
+    "documents": {
+      "https://example.com": 1
+    },
+    "domain": {
+      "https://example.com": 4
+    },
+    "example": {
+      "https://example.com": 2
+    },
+    "examples": {
+      "https://example.com": 1
+    },
+    "f0f0f2": {
+      "https://example.com": 1
+    },
+    "fdfdff": {
+      "https://example.com": 1
+    },
+    "forbidden": {
+      "https://www.iana.org/domains/example": 1
+    },
+    "helvetica": {
+      "https://example.com": 2
+    },
+    "ianaianaorg": {
+      "https://www.iana.org/domains/example": 1
+    },
+    "illustrative": {
+      "https://example.com": 1
+    },
+    "information": {
+      "https://example.com": 1
+    },
+    "literature": {
+      "https://example.com": 1
+    },
+    "maxwidth": {
+      "https://example.com": 1
+    },
+    "may": {
+      "https://example.com": 1
+    },
+    "media": {
+      "https://example.com": 1
+    },
+    "more": {
+      "https://example.com": 1
+    },
+    "neue": {
+      "https://example.com": 1
+    },
+    "none": {
+      "https://example.com": 1
+    },
+    "open": {
+      "https://example.com": 1
+    },
+    "permission": {
+      "https://example.com": 1
+    },
+    "prior": {
+      "https://example.com": 1
+    },
+    "questions": {
+      "https://www.iana.org/domains/example": 1
+    },
+    "required": {
+      "https://www.iana.org/domains/example": 1
+    },
+    "rgba000002": {
+      "https://example.com": 1
+    },
+    "segoe": {
+      "https://example.com": 1
+    },
+    "status": {
+      "https://www.iana.org/domains/example": 1
+    },
+    "systemui": {
+      "https://example.com": 1
+    },
+    "textdecoration": {
+      "https://example.com": 1
+    },
+    "ui": {
+      "https://example.com": 1
+    },
+    "use": {
+      "https://example.com": 2
+    },
+    "useragent": {
+      "https://www.iana.org/domains/example": 1
+    },
+    "without": {
+      "https://example.com": 1
+    },
+    "you": {
+      "https://example.com": 1
+    }
+  },
+  "total_docs": 2
 }
