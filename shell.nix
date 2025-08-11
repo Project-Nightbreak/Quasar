@@ -7,6 +7,7 @@ pkgs.mkShell {
     pkgs.pkg-config
     pkgs.boost
     pkgs.curl
+    pkgs.gumbo
   ];
 
   shellHook = ''
