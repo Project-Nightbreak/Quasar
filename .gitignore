@@ -1,0 +1,47 @@
+# Build output
+/build/
+/build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Object files
+*.o
+*.obj
+
+# Static & dynamic libs
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+quasar
+
+# Backup & temp files
+*~
+*.swp
+*.tmp
+*.log
+
+# Nix-related
+result
+.nix-*
+.direnv/
+.envrc
+
+# IDE/Editor configs
+.vscode/
+.idea/
+*.user
+*.workspace
+
+# Testing output
+*.gcda
+*.gcno
+*.gcov
