@@ -2,6 +2,10 @@
 #include <sstream>
 #include <algorithm>
 #include <cctype>
+#include <fstream>
+#include <nlohmann/json.hpp>
+
+using json = nlohmann::json;
 
 namespace {
     std::string normalize(const std::string& word) {
@@ -32,5 +36,19 @@ namespace quasar {
             return it->second;
         }
         return {};
+    }
+
+    void Indexer::save_to_file(const std::string& filename) const {
+        json j(index);
+        std::ofstream file(filename);
+        file << j.dump(2);
+    }
+
+    void Indexer::load_from_file(const std::string& filename) {
+        std::ifstream file(filename);
+        if (!file.is_open()) return;
+        json j;
+        file >> j;
+        index = j.get<std::unordered_map<std::string, std::vector<std::string>>>();
     }
 }

@@ -1,54 +1,66 @@
 #include "crawler.h"
 #include "indexer.h"
-#include <gumbo.h>
+#include "html_parser.h"
 #include <iostream>
-#include <string>
-
-std::string extract_text(GumboNode* node) {
-    if (node->type == GUMBO_NODE_TEXT) {
-        return std::string(node->v.text.text) + " ";
-    }
-    std::string text;
-    if (node->type == GUMBO_NODE_ELEMENT &&
-        node->v.element.tag != GUMBO_TAG_SCRIPT &&
-        node->v.element.tag != GUMBO_TAG_STYLE) {
-        GumboVector* children = &node->v.element.children;
-        for (unsigned int i = 0; i < children->length; ++i) {
-            text += extract_text(static_cast<GumboNode*>(children->data[i]));
-        }
-    }
-    return text;
-}
+#include <unordered_set>
+#include <filesystem>
 
 int main() {
     quasar::Crawler crawler;
     quasar::Indexer indexer;
 
-    try {
-        std::string html = crawler.fetch("https://example.com");
+    const std::string index_file = "index.json";
 
-        GumboOutput* output = gumbo_parse(html.c_str());
-        std::string text = extract_text(output->root);
-        gumbo_destroy_output(&kGumboDefaultOptions, output);
+    if (std::filesystem::exists(index_file)) {
+        std::cout << "Loading index from file...\n";
+        indexer.load_from_file(index_file);
+    } else {
+        std::unordered_set<std::string> visited;
+        std::string seed = "https://example.com";
+        std::vector<std::string> to_visit = {seed};
+        int max_pages = 5;
 
-        indexer.add_document("https://example.com", text);
+        while (!to_visit.empty() && visited.size() < (size_t)max_pages) {
+            std::string url = to_visit.back();
+            to_visit.pop_back();
 
-        std::string query;
-        std::cout << "Enter search term: ";
-        while (std::getline(std::cin, query)) {
-            auto results = indexer.search(query);
-            if (results.empty()) {
-                std::cout << "No results found.\n";
-            } else {
-                std::cout << "Results:\n";
-                for (const auto& url : results) {
-                    std::cout << " - " << url << "\n";
+            if (visited.count(url)) continue;
+            visited.insert(url);
+
+            try {
+                std::cout << "Crawling: " << url << "\n";
+                std::string html = crawler.fetch(url);
+
+                std::string text = quasar::HtmlParser::extract_text(html);
+                indexer.add_document(url, text);
+
+                auto links = quasar::HtmlParser::extract_links(html);
+                for (auto& link : links) {
+                    if (link.find("http") == 0 && !visited.count(link)) {
+                        to_visit.push_back(link);
+                    }
                 }
+            } catch (const std::exception& e) {
+                std::cerr << "Error fetching " << url << ": " << e.what() << "\n";
             }
-            std::cout << "Enter search term: ";
         }
-    } catch (const std::exception& e) {
-        std::cerr << "Error: " << e.what() << "\n";
-        return 1;
+
+        indexer.save_to_file(index_file);
+    }
+
+    // Search loop
+    std::string query;
+    std::cout << "\nEnter search term: ";
+    while (std::getline(std::cin, query)) {
+        auto results = indexer.search(query);
+        if (results.empty()) {
+            std::cout << "No results found.\n";
+        } else {
+            std::cout << "Results:\n";
+            for (const auto& u : results) {
+                std::cout << " - " << u << "\n";
+            }
+        }
+        std::cout << "\nEnter search term: ";
     }
 }

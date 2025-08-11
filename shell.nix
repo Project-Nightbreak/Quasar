@@ -8,6 +8,7 @@ pkgs.mkShell {
     pkgs.boost
     pkgs.curl
     pkgs.gumbo
+    pkgs.nlohmann_json
   ];
 
   shellHook = ''
